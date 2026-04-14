@@ -10,17 +10,11 @@
         
         let n = prompt("Введите n:");
         for (let i = 2; i <= n; i++) {
-            // TODO: сделать второй вариант
-            let isPrime = true
-
-            for (let j = 2; j < i; j++) {
-                if (i % j == 0){
-                    isPrime = false;
-                    break;
-                }
-            }
-            if (isPrime) {
-                alert(i); 
+            let j = 2;
+            for (; i < j && i % j != 0; j++);
+            
+            if (i == j) {
+                alert(i);
             }
         } 
     </script>
