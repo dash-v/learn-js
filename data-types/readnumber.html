@@ -1,0 +1,24 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <script>
+        function readNumber(){
+            this.number
+            do {
+                this.number = prompt("Введите число: ", 0);
+            } while (!isFinite(this.number));
+            if (this.number === null || this.number === '') return null; 
+            
+            return this.number;
+            };
+            
+       
+        alert( readNumber())
+    </script>
+</body>
+</html>
