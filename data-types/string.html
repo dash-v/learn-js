@@ -1,0 +1,42 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <script>
+        function ucFirst(str) {
+            str = str[0].toUpperCase() + str.slice(1);
+            return str;
+        }
+        alert(ucFirst(prompt('String: ')));
+
+        
+        function checkSpam(str) {
+            if (str.toLowerCase().includes('viagra') || str.toUpperCase().includes('XXX')){
+                 return true;
+            };
+            return false;
+        }
+        alert(checkSpam(prompt('String: ')));
+
+        
+       function truncate(str, maxlength){
+            if (str.length > maxlength) {
+                return str.slice(0,19) + '…';
+                };
+            return str.length;
+        };
+        alert(truncate("Вот, что мне хотелось бы сказать на эту тему:", 20));
+    
+       function extractCurrencyValue(str){
+            return +str.slice(1);
+            //return parseInt(str);
+       }
+       alert(extractCurrencyValue(prompt('String: ')));
+        
+    </script>
+</body>
+</html>
