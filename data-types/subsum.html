@@ -1,0 +1,74 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+
+<body>
+    <script>
+
+        function getMaxSubSum(arr) {
+            let tik = 0;
+            let maxSum = 0;
+            for (let start = 0; start < arr.length; start++) {
+                for (let end = start; end < arr.length; end++) {
+                    let currentSum = 0;
+                    for (let i = start; i <= end; i++) {
+                        currentSum += arr[i];
+                        tik++;
+                    }
+                    if (maxSum < currentSum) {
+                        maxSum = currentSum
+                    }
+                }
+            }
+            console.log(Math.log(tik) / Math.log(arr.length));
+            return maxSum;
+        }
+        function getMaxSubSumN2(arr) {
+            let maxSum = 0;
+            let tik = 0;
+            for (let start = 0; start < arr.length; start++) {
+                let currentSum = 0;
+                for (let i = start; i < arr.length; i++) {
+                    currentSum += arr[i];
+                    tik++;
+                    if (maxSum < currentSum) {
+                        maxSum = currentSum
+                    }
+                }
+            }
+            console.log(Math.log(tik) / Math.log(arr.length));
+            return maxSum;
+        }
+        function getMaxSubSumN(arr) {
+            let tik = 0;
+            let maxSum = 0;
+            let currentSum = 0;
+            for (let item of arr) {
+                tik++;
+                currentSum += item;
+                if (currentSum < 0) {
+                    currentSum = 0;
+                }
+
+                if (maxSum < currentSum) {
+                    maxSum = currentSum
+                }
+            }
+            
+            console.log(Math.log(tik) / Math.log(arr.length));
+            return maxSum;
+        }
+
+        alert(getMaxSubSum([-1, 2, -3, 4, -9, 5, 5, -1, 2, -3, 4, -9, 5, 5, -1, 2, -3, 4, -9, 5, 5, -1, 2, -3, 4, -9, 5, 5, -1, 2, -3, 4, -9, 5, 5, -1, 2, -3, 4, -9, 5, 5, -1, 2, -3, 4, -9, 5, 5, -1, 2, -3, 4, -9, 5, 5]));
+        alert(getMaxSubSumN2([-1, 2, -3, 4, -9, 5, 5, -1, 2, -3, 4, -9, 5, 5, -1, 2, -3, 4, -9, 5, 5, -1, 2, -3, 4, -9, 5, 5, -1, 2, -3, 4, -9, 5, 5, -1, 2, -3, 4, -9, 5, 5, -1, 2, -3, 4, -9, 5, 5, -1, 2, -3, 4, -9, 5, 5]));
+        alert(getMaxSubSumN([-1, 2, -3, 4, -9, 5, 5, -1, 2, -3, 4, -9, 5, 5, -1, 2, -3, 4, -9, 5, 5, -1, 2, -3, 4, -9, 5, 5, -1, 2, -3, 4, -9, 5, 5, -1, 2, -3, 4, -9, 5, 5, -1, 2, -3, 4, -9, 5, 5, -1, 2, -3, 4, -9, 5, 5]));
+
+    </script>
+</body>
+
+</html>

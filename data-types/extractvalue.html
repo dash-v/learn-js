@@ -7,12 +7,13 @@
 </head>
 <body>
     <script>
-        function ucFirst(str) {
-            str = str[0].toUpperCase() + str.slice(1);
-            return str;
-        }
-        alert(ucFirst(prompt('String: ')));
-        
+
+       function extractCurrencyValue(str){
+            return +str.slice(1);
+            //return parseInt(str);
+       }
+       alert(extractCurrencyValue(prompt('String: ')));
+       
     </script>
 </body>
 </html>
