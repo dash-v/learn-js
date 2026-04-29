@@ -1,0 +1,45 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <script>
+        const TESTS = {
+            "background-color" : "backgroundColor",
+            "list-style-image" : 'listStyleImage',
+            "-webkit-transition" : 'WebkitTransition'
+        };
+
+        function camelize(str) {
+            const parts = str.split('-');
+            let isFirst = true
+            const resultParts = []
+            for (const item of parts) {
+                if (isFirst) {
+                    isFirst = false;
+                    resultParts.push(item);
+                    continue;
+                }
+                resultParts.push(item[0].toUpperCase() + item.slice(1));
+      
+            }
+            return resultParts.join('');
+          
+        }
+
+        for(let test in TESTS) {
+            const expected = TESTS[test];
+            const actual = camelize(test);
+            if (actual === expected) {
+                console.log('✅ OK', test, '->', expected);
+            } else {
+                console.log('❌ ERROR', test, '->', expected, 'actual:', actual);
+            }
+        }
+
+    </script>
+</body>
+</html>

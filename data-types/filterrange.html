@@ -1,0 +1,23 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <script>
+        function filterRange(arr, a, b){
+            filtered = [];
+         
+            for (item of arr) {
+                if ( item >= a && item <= b ){
+                    filtered.push(item);
+                }
+            }
+            return filtered;
+        }
+        console.log(filterRange([5, 3, 8, 1], 1, 4));
+    </script>
+</body>
+</html>
